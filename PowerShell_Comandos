@@ -1,0 +1,78 @@
+get
+get-help
+get-item
+copy-item
+remove-item
+get-service
+start-service
+stop-service
+suspend-service
+resume-service
+restart-service
+get-process
+start-process
+stop-process
+wait-prpcess
+get-content
+set-executionpolicy unrestricted
+set-executionpolicy all signed
+set-executionpolicy remote signed
+set-executionpolicy restricted
+sfc
+cd
+cls
+param
+Read-Host
+$name ##parametro
+command | out null
+Write-Output
+--title="Numero" \
+--text="Cuantos numeros desea generar" \
+--entry-text "4"
+ps | Select-Object
+
+
+
+##
+function comprobar
+{
+  param
+  (
+    [Parameter(Mandatory=$true, ValueFromPipeline=$true)]
+    [String[]]
+    [AllowEmptyString()]
+    $User,$Pass
+  )
+ 
+  begin
+  {
+    Write-Host "Principio de login"
+    $usercorrecto="Maria"
+    $passcorrecto="Contraseña"
+  }
+  process
+  {
+   if($User -eq $usercorrecto -and $Pass -eq $passcorrecto)
+    {
+        $ok=1
+    }
+    else
+        {
+        $ok=0
+    }
+  }
+  end
+  {
+   if($ok)
+    {
+        Write-Host "User correcto"
+    }
+    else
+    {
+        Write-Host "User no correcto"
+    }
+    Write-Host "Fin de login"
+  }
+}
+
+
